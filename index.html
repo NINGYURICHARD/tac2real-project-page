@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="title" content="Tac2Real Project Page">
-  <meta name="description" content="Project page for Tac2Real, a sim-to-real protocol for marker-based visuotactile sensing and contact-rich manipulation.">
+  <meta name="title" content="Tac2Real: Reliable and GPU Visuotactile Simulation for Online Reinforcement Learning and Zero-shot Real-World Deployment">
+  <meta name="description" content="Tac2Real is a lightweight visuotactile simulation framework for efficient online reinforcement learning and reliable zero-shot sim-to-real transfer in contact-rich robotic manipulation.">
   <meta name="keywords" content="Tac2Real, visuotactile sensing, sim-to-real, tactile sensing, contact-rich manipulation, robot learning">
-  <meta name="author" content="Please replace with the final author list">
-  <title>Tac2Real | Project Page</title>
+  <meta name="author" content="Ningyu Yan, Shuai Wang, Xing Shen, Hui Wang, Hanqing Wang, Yang Xiang, Jiangmiao Pang">
+  <title>Tac2Real: Reliable and GPU Visuotactile Simulation for Online Reinforcement Learning and Zero-shot Real-World Deployment</title>
   <style>
     :root {
       --bg: #ffffff;
@@ -83,7 +83,17 @@
       color: #333333;
     }
 
+    .authors {
+      line-height: 1.8;
+    }
+
     .affiliation {
+      color: var(--muted);
+    }
+
+    .author-note {
+      margin-top: 10px;
+      font-size: 0.95rem;
       color: var(--muted);
     }
 
@@ -298,16 +308,24 @@
   <header class="hero">
     <div class="container">
       <div class="content">
-        <h1>Tac2Real</h1>
+        <h1>Tac2Real: Reliable and GPU Visuotactile Simulation for Online Reinforcement Learning and Zero-shot Real-World Deployment</h1>
         <p class="subtitle">
-          A project page for marker-based visuotactile sim-to-real transfer and contact-rich manipulation.
-          The layout is rewritten to be closer to the clean academic style of the reference page you shared.
+          A lightweight visuotactile simulation framework designed for efficient online reinforcement learning
+          and reliable zero-shot real-world deployment in contact-rich robotic manipulation.
         </p>
         <div class="authors">
-          <strong>Authors:</strong> Replace with the final author list from the paper
+          Ningyu Yan<sup>1,2,*</sup>,
+          Shuai Wang<sup>1,*</sup>,
+          Xing Shen<sup>1</sup>,
+          Hui Wang<sup>1</sup>,
+          Hanqing Wang<sup>1,&dagger;</sup>,
+          Yang Xiang<sup>2,&dagger;</sup>,
+          and Jiangmiao Pang<sup>1,&dagger;</sup>
         </div>
         <div class="affiliation">
-          Replace with affiliation, venue, and project links
+          <div><sup>1</sup> Shanghai Artificial Intelligence Laboratory.</div>
+          <div><sup>2</sup> The Hong Kong University of Science and Technology.</div>
+          <div class="author-note"><sup>*</sup> Equal contribution. <sup>&dagger;</sup> Corresponding authors.</div>
         </div>
         <div class="links">
           <a class="link-btn primary" href="Arxiv_Tac2Real.pdf" target="_blank" rel="noopener">Paper</a>
@@ -343,9 +361,18 @@
         <div class="content">
           <h2>Abstract</h2>
           <p class="lead">
-            Tac2Real studies sim-to-real transfer for marker-based visuotactile sensing and downstream contact-rich manipulation.
-            From the available assets in your workspace, the paper appears to emphasize tactile deformation realism, comparison with prior tactile simulators,
-            and downstream policy performance on tasks such as peg and nut interaction. You can replace this with the exact abstract later.
+            Visuotactile sensors are indispensable for contact-rich robotic manipulation tasks. However, policy
+            learning with tactile feedback in simulation, especially for online reinforcement learning (RL),
+            remains a critical challenge, as it demands a delicate balance between physics fidelity and
+            computational efficiency. To address this challenge, we present Tac2Real, a lightweight
+            visuotactile simulation framework designed to enable efficient online RL training. Tac2Real
+            integrates the Preconditioned Nonlinear Conjugate Gradient Incremental Potential Contact
+            (PNCG-IPC) method with a multi-node, multi-GPU high-throughput parallel simulation architecture,
+            which can generate marker displacement fields at interactive rates. Meanwhile, we propose a
+            systematic approach, TacAlign, to narrow both structured and stochastic sources of domain gap,
+            ensuring a reliable zero-shot sim-to-real transfer. We further evaluate Tac2Real on the
+            contact-rich peg insertion task. The zero-shot transfer results achieve a high success rate in
+            the real-world scenario, verifying the effectiveness and robustness of our framework.
           </p>
         </div>
       </div>
