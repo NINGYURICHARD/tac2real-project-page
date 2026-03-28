@@ -6,351 +6,372 @@
   <meta name="title" content="Tac2Real Project Page">
   <meta name="description" content="Project page for Tac2Real, a sim-to-real protocol for marker-based visuotactile sensing and contact-rich manipulation.">
   <meta name="keywords" content="Tac2Real, visuotactile sensing, sim-to-real, tactile sensing, contact-rich manipulation, robot learning">
-  <meta name="author" content="Please update author names">
+  <meta name="author" content="Please replace with the final author list">
   <title>Tac2Real | Project Page</title>
   <style>
     :root {
-      --bg: #f5f1e8;
-      --paper: #fffdf8;
-      --ink: #1f1a14;
-      --muted: #64594d;
-      --line: #ddd2c1;
-      --accent: #9d4f2e;
-      --accent-dark: #6b321b;
-      --soft: #efe3d0;
-      --shadow: 0 14px 40px rgba(54, 39, 25, 0.10);
-      --radius: 22px;
-      --max: 1120px;
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --line: #e6e6e6;
+      --soft: #f7f7f7;
+      --accent: #2b6cb0;
+      --accent-soft: #edf4ff;
+      --max-width: 1080px;
+      --content-width: 920px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(157, 79, 46, 0.14), transparent 30%),
-        radial-gradient(circle at top right, rgba(89, 122, 95, 0.14), transparent 28%),
-        linear-gradient(180deg, #f7f3eb 0%, #f3ede2 100%);
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.65;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-    .wrap {
-      width: min(calc(100% - 32px), var(--max));
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .content {
+      width: min(100%, var(--content-width));
       margin: 0 auto;
     }
 
     .hero {
-      padding: 72px 0 36px;
+      padding: 56px 0 28px;
+      text-align: center;
     }
 
-    .hero-card,
-    .section-card {
-      background: rgba(255, 253, 248, 0.92);
-      border: 1px solid rgba(221, 210, 193, 0.9);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(6px);
-    }
-
-    .hero-card {
-      padding: 42px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -60px -80px auto;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(157, 79, 46, 0.18), transparent 70%);
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--accent-dark);
-      font-size: 0.92rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      margin-bottom: 18px;
-    }
-
-    h1, h2, h3, h4, p { margin: 0; }
-
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 4.6rem);
-      line-height: 1.08;
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      line-height: 1.15;
       letter-spacing: -0.03em;
-      max-width: 900px;
+      font-weight: 700;
     }
 
-    .subtitle {
-      margin-top: 18px;
-      font-size: 1.08rem;
+    .hero .subtitle {
+      margin: 16px auto 0;
+      max-width: 840px;
+      font-size: 1.06rem;
       color: var(--muted);
-      max-width: 800px;
     }
 
     .authors,
-    .meta {
-      margin-top: 24px;
-      color: var(--muted);
-      font-size: 1rem;
+    .affiliation {
+      margin-top: 18px;
+      font-size: 1.03rem;
+      color: #333333;
     }
 
-    .actions {
+    .affiliation {
+      color: var(--muted);
+    }
+
+    .links {
       margin-top: 28px;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 12px;
     }
 
-    .btn {
+    .link-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 13px 18px;
+      padding: 11px 18px;
       border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 700;
-      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: var(--text);
+      font-size: 0.98rem;
+      font-weight: 600;
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
     }
 
-    .btn:hover { transform: translateY(-1px); }
+    .link-btn:hover {
+      background: var(--soft);
+      border-color: #d5d5d5;
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
 
-    .btn-primary {
+    .link-btn.primary {
       background: var(--accent);
-      color: #fff;
+      color: #ffffff;
+      border-color: var(--accent);
     }
 
-    .btn-secondary {
-      background: transparent;
-      border-color: var(--line);
-      color: var(--ink);
+    .link-btn.primary:hover {
+      background: #245a92;
+      border-color: #245a92;
     }
 
-    main { padding-bottom: 64px; }
-
-    section {
-      padding: 18px 0;
+    .section {
+      padding: 26px 0;
     }
 
-    .section-card {
-      padding: 34px;
-    }
-
-    h2 {
-      font-size: clamp(1.55rem, 3vw, 2.2rem);
-      margin-bottom: 10px;
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 1.9rem;
+      text-align: center;
       letter-spacing: -0.02em;
     }
 
-    .section-intro {
+    .section p.lead {
+      margin: 0 auto 22px;
+      max-width: 860px;
+      text-align: center;
       color: var(--muted);
-      margin-bottom: 24px;
-      max-width: 850px;
     }
 
-    .grid-2,
-    .grid-3 {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-    .info-card,
-    .figure-card {
-      background: var(--paper);
+    .teaser-box,
+    .card,
+    .paper-box,
+    .bib-box {
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 22px;
+      background: #ffffff;
     }
 
-    .info-card h3,
-    .figure-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-
-    .info-card p,
-    .figure-card p,
-    li {
-      color: var(--muted);
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .figure-stack {
-      display: grid;
-      gap: 22px;
+    .teaser-box {
+      padding: 18px;
     }
 
     .placeholder {
-      min-height: 280px;
-      border: 2px dashed #ccb99f;
-      border-radius: 18px;
-      background:
-        linear-gradient(135deg, rgba(157, 79, 46, 0.08), rgba(89, 122, 95, 0.08)),
-        repeating-linear-gradient(
-          -45deg,
-          rgba(255,255,255,0.35),
-          rgba(255,255,255,0.35) 16px,
-          rgba(255,255,255,0.18) 16px,
-          rgba(255,255,255,0.18) 32px
-        );
+      min-height: 360px;
+      border: 2px dashed #cfcfcf;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #fafafa 0%, #f4f4f4 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 24px;
-      color: var(--accent-dark);
+      color: #777777;
       font-weight: 700;
     }
 
-    .figure-label {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 6px 10px;
-      border-radius: 999px;
+    .caption {
+      margin-top: 14px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 22px;
       background: var(--soft);
-      color: var(--accent-dark);
-      font-size: 0.88rem;
-      font-weight: 700;
     }
 
-    .paper-frame {
-      width: 100%;
-      height: 760px;
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .card p,
+    .card li {
+      margin: 0;
+      color: #555555;
+      font-size: 0.98rem;
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .figure-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .figure-item {
       border: 1px solid var(--line);
       border-radius: 18px;
-      background: #fff;
+      padding: 20px;
+      background: #ffffff;
+    }
+
+    .figure-item h3 {
+      margin: 0 0 12px;
+      font-size: 1.08rem;
+    }
+
+    .figure-tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .figure-item p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .paper-box,
+    .bib-box {
+      padding: 18px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 760px;
+      border: 0;
+      border-radius: 12px;
     }
 
     pre {
       margin: 0;
-      padding: 22px;
-      border-radius: 18px;
+      padding: 18px;
+      border-radius: 12px;
+      background: #f5f7fa;
       overflow-x: auto;
-      background: #201a14;
-      color: #f9efe0;
-      font-size: 0.95rem;
-      line-height: 1.55;
+      font-size: 0.94rem;
+      line-height: 1.6;
     }
 
     footer {
-      padding: 12px 0 48px;
-      color: var(--muted);
-      font-size: 0.96rem;
+      padding: 22px 0 48px;
       text-align: center;
-    }
-
-    .note {
-      margin-top: 12px;
       color: var(--muted);
       font-size: 0.94rem;
     }
 
     @media (max-width: 860px) {
-      .hero-card,
-      .section-card { padding: 24px; }
-      .grid-2,
-      .grid-3 { grid-template-columns: 1fr; }
-      .paper-frame { height: 520px; }
-      .placeholder { min-height: 220px; }
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .placeholder {
+        min-height: 240px;
+      }
+
+      iframe {
+        height: 520px;
+      }
     }
   </style>
 </head>
 <body>
   <header class="hero">
-    <div class="wrap">
-      <div class="hero-card">
-        <div class="eyebrow">Project Page</div>
+    <div class="container">
+      <div class="content">
         <h1>Tac2Real</h1>
         <p class="subtitle">
-          A project page for contact-rich manipulation with marker-based visuotactile sensing.
-          This page is rewritten from your original template and organized around the paper content,
-          with figures shown in normal top-to-bottom order instead of carousel sliders.
+          A project page for marker-based visuotactile sim-to-real transfer and contact-rich manipulation.
+          The layout is rewritten to be closer to the clean academic style of the reference page you shared.
         </p>
         <div class="authors">
-          <strong>Authors:</strong> Please replace with the author list from the paper
+          <strong>Authors:</strong> Replace with the final author list from the paper
         </div>
-        <div class="meta">
-          <strong>Affiliation / Venue:</strong> Please replace with your lab, institution, and paper status
+        <div class="affiliation">
+          Replace with affiliation, venue, and project links
         </div>
-        <div class="actions">
-          <a class="btn btn-primary" href="Arxiv_Tac2Real.pdf" target="_blank" rel="noopener">Paper PDF</a>
-          <a class="btn btn-secondary" href="#figures">Figures</a>
-          <a class="btn btn-secondary" href="#bibtex">BibTeX</a>
-          <a class="btn btn-secondary" href="#" title="Replace with your code repository link">Code Link Placeholder</a>
+        <div class="links">
+          <a class="link-btn primary" href="Arxiv_Tac2Real.pdf" target="_blank" rel="noopener">Paper</a>
+          <a class="link-btn" href="#teaser">Teaser</a>
+          <a class="link-btn" href="#figures">Figures</a>
+          <a class="link-btn" href="#paper">PDF</a>
+          <a class="link-btn" href="#bibtex">BibTeX</a>
+          <a class="link-btn" href="#" title="Replace with your code repository link">Code</a>
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <section>
-      <div class="wrap">
-        <div class="section-card">
+    <section class="section" id="teaser">
+      <div class="container">
+        <div class="content">
+          <div class="teaser-box">
+            <div class="placeholder">
+              Insert teaser figure here<br>
+              Suggested: your main pipeline or headline visual
+            </div>
+            <p class="caption">
+              Tac2Real focuses on realistic marker-based visuotactile simulation and improved sim-to-real transfer for contact-rich manipulation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="content">
           <h2>Abstract</h2>
-          <p class="section-intro">
-            Tac2Real studies sim-to-real transfer for marker-based visuotactile sensing and downstream
-            contact-rich manipulation. From the material in the paper and accompanying figures, the key
-            focus is building a more faithful tactile simulation pipeline, matching deformation behavior
-            between simulation and reality, and improving transfer performance on tasks such as peg and
-            nut interaction. Replace this paragraph with the exact abstract from your PDF when convenient.
+          <p class="lead">
+            Tac2Real studies sim-to-real transfer for marker-based visuotactile sensing and downstream contact-rich manipulation.
+            From the available assets in your workspace, the paper appears to emphasize tactile deformation realism, comparison with prior tactile simulators,
+            and downstream policy performance on tasks such as peg and nut interaction. You can replace this with the exact abstract later.
           </p>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap">
-        <div class="section-card">
+    <section class="section">
+      <div class="container">
+        <div class="content">
           <h2>Overview</h2>
-          <p class="section-intro">
-            This section summarizes the story of the paper in project-page form, so visitors can quickly
-            understand the motivation, the technical contribution, and the experimental takeaways before
-            reading the full manuscript.
-          </p>
           <div class="grid-3">
-            <div class="info-card">
-              <h3>Problem</h3>
+            <div class="card">
+              <h3>Motivation</h3>
               <p>
-                Contact-rich robot learning with visuotactile sensors is hard to transfer from simulation
-                to reality because contact deformation, marker motion, and sensor response are difficult
-                to model accurately.
+                Marker-based visuotactile sensing is highly informative for contact-rich robot manipulation, but the simulation gap makes policy transfer difficult.
               </p>
             </div>
-            <div class="info-card">
-              <h3>Core Idea</h3>
+            <div class="card">
+              <h3>Method</h3>
               <p>
-                Tac2Real builds a sim-to-real pipeline that better captures tactile deformation behavior
-                and uses it to support training and evaluation for manipulation policies.
+                Tac2Real aims to better align simulation and real tactile behavior by modeling deformation and marker motion more faithfully.
               </p>
             </div>
-            <div class="info-card">
-              <h3>Outcome</h3>
+            <div class="card">
+              <h3>Result</h3>
               <p>
-                The paper compares Tac2Real against prior tactile simulation baselines and shows stronger
-                alignment with real tactile behavior and better task-level learning performance.
+                The paper compares Tac2Real with prior baselines and evaluates realism, efficiency, and downstream manipulation performance.
               </p>
             </div>
           </div>
@@ -358,156 +379,118 @@
       </div>
     </section>
 
-    <section>
-      <div class="wrap">
-        <div class="section-card">
-          <h2>Highlights</h2>
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <h2>Key Contributions</h2>
           <div class="grid-2">
-            <div class="info-card">
-              <h3>Technical Contributions</h3>
+            <div class="card">
+              <h3>What The Paper Adds</h3>
               <ul>
-                <li>A marker-based visuotactile sim-to-real pipeline centered on Tac2Real.</li>
-                <li>Explicit modeling of tactile deformation and contact response.</li>
-                <li>Evaluation across simulation realism, efficiency, and downstream manipulation.</li>
+                <li>A sim-to-real pipeline for marker-based visuotactile sensing.</li>
+                <li>Better tactile deformation alignment between simulation and real observations.</li>
+                <li>Evaluation across realism metrics and contact-rich task learning.</li>
               </ul>
             </div>
-            <div class="info-card">
-              <h3>Experiments</h3>
+            <div class="card">
+              <h3>What Visitors Should Notice</h3>
               <ul>
-                <li>Comparison to other tactile simulation methods such as Tacchi and TacSL.</li>
-                <li>Qualitative and quantitative analysis over multiple contact shapes and actions.</li>
-                <li>Policy training results on representative tasks including peg and nut interaction.</li>
+                <li>Method comparison against tactile simulation baselines.</li>
+                <li>Qualitative sim-versus-real tactile image or marker behavior alignment.</li>
+                <li>Policy results on downstream manipulation tasks.</li>
               </ul>
             </div>
           </div>
-          <p class="note">
-            I inferred these points from your PDF filename and available figure assets in the workspace.
-            If you want, I can do one more pass later to replace them with the exact wording from the paper.
-          </p>
         </div>
       </div>
     </section>
 
-    <section id="figures">
-      <div class="wrap">
-        <div class="section-card">
+    <section class="section" id="figures">
+      <div class="container">
+        <div class="content">
           <h2>Figures</h2>
-          <p class="section-intro">
-            Figures are now arranged in normal reading order instead of left-right carousel navigation.
-            I left image areas as placeholders so you can drop in your final exported figures directly.
+          <p class="lead">
+            Figures are arranged sequentially for normal reading, similar to the reference page style, rather than in a carousel.
           </p>
-          <div class="figure-stack">
-            <div class="figure-card">
-              <div class="figure-label">Figure 1</div>
-              <h3>Framework Overview</h3>
-              <div class="placeholder">Insert Figure 1 here<br>Suggested: overall Tac2Real pipeline / teaser figure</div>
-              <p>
-                Use this slot for the main overview figure that introduces the sensor, simulation setup,
-                contact modeling pipeline, and sim-to-real workflow.
-              </p>
+          <div class="figure-list">
+            <div class="figure-item">
+              <div class="figure-tag">Figure 1</div>
+              <h3>Overall Framework</h3>
+              <div class="placeholder">Insert Figure 1 here</div>
+              <p>Suggested content: overall pipeline, tactile sensor model, and sim-to-real workflow.</p>
             </div>
 
-            <div class="figure-card">
-              <div class="figure-label">Figure 2</div>
-              <h3>Tactile Simulation and Rendering</h3>
-              <div class="placeholder">Insert Figure 2 here<br>Suggested: contact/deformation or rendering details</div>
-              <p>
-                A good place for the figure that explains how Tac2Real represents deformation, marker
-                motion, tactile image generation, or the simulation stack.
-              </p>
+            <div class="figure-item">
+              <div class="figure-tag">Figure 2</div>
+              <h3>Tactile Deformation Modeling</h3>
+              <div class="placeholder">Insert Figure 2 here</div>
+              <p>Suggested content: contact modeling, marker displacement, or rendering details.</p>
             </div>
 
-            <div class="figure-card">
-              <div class="figure-label">Figure 3</div>
-              <h3>Qualitative Comparison</h3>
-              <div class="placeholder">Insert Figure 3 here<br>Suggested: visual comparison between simulation and real tactile observations</div>
-              <p>
-                This slot fits the figure showing qualitative realism, shape/contact cases, or side-by-side
-                comparisons with existing methods.
-              </p>
+            <div class="figure-item">
+              <div class="figure-tag">Figure 3</div>
+              <h3>Qualitative Sim-to-Real Comparison</h3>
+              <div class="placeholder">Insert Figure 3 here</div>
+              <p>Suggested content: side-by-side tactile outputs for simulation and real sensing.</p>
             </div>
 
-            <div class="figure-card">
-              <div class="figure-label">Figure 4</div>
+            <div class="figure-item">
+              <div class="figure-tag">Figure 4</div>
               <h3>Quantitative Analysis</h3>
-              <div class="placeholder">Insert Figure 4 here<br>Suggested: keypoint/displacement or error metrics</div>
-              <p>
-                The available assets suggest quantitative plots such as keypoint-vs-displacement analysis
-                or realism metrics; this section is meant for that figure.
-              </p>
+              <div class="placeholder">Insert Figure 4 here</div>
+              <p>Suggested content: keypoint, displacement, error, or realism comparison plots.</p>
             </div>
 
-            <div class="figure-card">
-              <div class="figure-label">Figure 5</div>
-              <h3>Performance and Efficiency</h3>
-              <div class="placeholder">Insert Figure 5 here<br>Suggested: simulation fidelity / speed trade-off comparison</div>
-              <p>
-                Use this area for charts comparing Tac2Real with baselines on accuracy, realism, and frame
-                rate or throughput.
-              </p>
+            <div class="figure-item">
+              <div class="figure-tag">Figure 5</div>
+              <h3>Performance Comparison</h3>
+              <div class="placeholder">Insert Figure 5 here</div>
+              <p>Suggested content: fidelity-speed tradeoff and comparison to Tacchi, TacSL, or other baselines.</p>
             </div>
 
-            <div class="figure-card">
-              <div class="figure-label">Figure 6</div>
+            <div class="figure-item">
+              <div class="figure-tag">Figure 6</div>
               <h3>Downstream Manipulation Results</h3>
-              <div class="placeholder">Insert Figure 6 here<br>Suggested: peg insertion / nut task learning curves or rollouts</div>
-              <p>
-                This is a natural place for the task-level results demonstrating transfer to contact-rich
-                manipulation benchmarks.
-              </p>
-            </div>
-
-            <div class="figure-card">
-              <div class="figure-label">Supplementary</div>
-              <h3>Additional Visualizations</h3>
-              <div class="placeholder">Insert supplementary figures here<br>Suggested: shape-action grid or more sim/real comparisons</div>
-              <p>
-                You can duplicate this card structure if you want to show supplementary grids for press,
-                slide, and rotate actions over multiple object geometries.
-              </p>
+              <div class="placeholder">Insert Figure 6 here</div>
+              <p>Suggested content: peg insertion, nut task curves, or policy rollout results.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap">
-        <div class="section-card">
+    <section class="section" id="paper">
+      <div class="container">
+        <div class="content">
           <h2>Paper</h2>
-          <p class="section-intro">
-            The PDF is embedded below for quick browsing, and the button at the top opens it in a new tab.
-          </p>
-          <iframe class="paper-frame" src="Arxiv_Tac2Real.pdf" title="Tac2Real paper PDF"></iframe>
+          <div class="paper-box">
+            <iframe src="Arxiv_Tac2Real.pdf" title="Tac2Real paper PDF"></iframe>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="bibtex">
-      <div class="wrap">
-        <div class="section-card">
+    <section class="section" id="bibtex">
+      <div class="container">
+        <div class="content">
           <h2>BibTeX</h2>
-          <p class="section-intro">
-            I left this as an editable placeholder because I could not reliably extract the exact metadata
-            from the PDF in the current environment.
-          </p>
-          <pre><code>@article{tac2real2026,
+          <div class="bib-box">
+            <pre><code>@article{tac2real2026,
   title   = {Tac2Real: Please replace with the exact paper title},
-  author  = {Please replace with the exact author list},
+  author  = {Please replace with the final author list},
   journal = {arXiv},
   year    = {2026},
   url     = {Arxiv_Tac2Real.pdf}
 }</code></pre>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      Built from your original template and simplified into a standalone project page.
-      Replace the remaining author, venue, link, abstract, and BibTeX placeholders when you finalize the camera-ready text.
-    </div>
+    Rewrite inspired by the clean academic structure of the reference page.
+    Remaining placeholders can be replaced with your final paper metadata and exported figures.
   </footer>
 </body>
 </html>
