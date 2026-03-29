@@ -16,6 +16,7 @@
       --line: #e6e6e6;
       --soft: #f7f7f7;
       --accent: #2b6cb0;
+      --highlight-blue: #55b8dc;
       --accent-soft: #edf4ff;
       --max-width: 1080px;
       --content-width: 920px;
@@ -192,8 +193,13 @@
       width: 100%;
       display: block;
       border-radius: 14px;
-      border: 1px solid var(--line);
-      background: #ffffff;
+      border: 0;
+      background: transparent;
+    }
+
+    .teaser-image--narrow {
+      width: min(50%, 860px);
+      margin: 0 auto;
     }
 
     .caption {
@@ -201,6 +207,11 @@
       text-align: center;
       color: var(--muted);
       font-size: 0.97rem;
+    }
+
+    .highlight-blue {
+      color: var(--highlight-blue);
+      font-weight: 700;
     }
 
     .grid-3,
@@ -343,7 +354,7 @@
         </div>
         <div class="links">
           <a class="link-btn primary" href="Arxiv_Tac2Real.pdf" target="_blank" rel="noopener">Arxiv</a>
-          <a class="link-btn" href="https://github.com/NINGYURICHARD/Tac2Real" title="Replace with your code repository link">Code</a>
+          <a class="link-btn primary" href="https://github.com/NINGYURICHARD/Tac2Real" title="Replace with your code repository link">Code</a>
         </div>
       </div>
     </div>
@@ -399,13 +410,64 @@
             Tac2Real uses PNCG-IPC, a physically consistent simulation method with robust contact handling and numerical stability,  as visuotactile simulator. 
             The visuotactile simulation is integrated into existing physics engine to support online RL training follows a plugin-based architecture. 
             By extracting relative pose data during physics steps to simulate marker displacements, it forms a combined observation for RL agents. 
+            This framework has <span class="highlight-blue">cross-engine compatibility</span> and excellent <span class="highlight-blue">multi-node multi-gpu parallelization</span> performance.
           </p>
-          <div class="card" style="margin-top: 18px;">
-            <ul>
-              <li><strong>Cross-engine compatibility.</strong> Tac2Real follows a decoupled plugin-based architecture, allowing the visuotactile simulator to be integrated into existing physics engines for online RL training.</li>
-              <li><strong>Multi-node Multi-GPU parallelization.</strong> Tac2Real adopts a Ray-based multi-node, multi-GPU high-throughput parallel simulation architecture to generate marker displacement fields at interactive rates.</li>
-            </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <h2>TacAlign Framework</h2>
+          <div class="teaser-box">
+            <img
+              class="teaser-image"
+              src="svgs/Fig4_new2.svg"
+              alt="Tac2Real overview figure">
           </div>
+          <p class="lead" style="margin-top: 18px; text-align: justify;">
+              To systematically mitigate the sim-to-real gap, we propose TacAlign within the Tac2Real framework, addressing both structured and stochastic discrepancies.
+              For structured alignment, robot control, baseline IPC parameters and task-based parameters calibration are contained, combined with randomization to handle stochastic gap.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <h2>Visuotactile simulation Results</h2>
+          <div class="teaser-box">
+            <img
+              class="teaser-image"
+              src="svgs/FigS1_new2.svg"
+              alt="Tac2Real overview figure">
+          </div>
+          <p class="lead" style="margin-top: 18px; text-align: justify;">
+              The visuotactile simulation results of 4 indenters ((a), (b), (c) and (d) corresponds to cube, cylinder, moon and triangle, respectively) under press, slide and rotate deformation. We also compare Tac2Real with Tacchi (material point method based) and TacSL (penalty-based) method.
+              We observed that Tac2Real and Tacchi align relative closely with the real situation under such small deformation, whereas Tac2Real deviates significantly
+          </p>
+            <img
+              class="teaser-image"
+              src="svgs/project_page1.svg"
+              alt="Tac2Real overview figure">
+          </div>
+          <p class="lead" style="margin-top: 18px; text-align: justify;">
+              Under large deformations, Tacchi suffers from particle splashing and numerical instability caused by adhesion deficiencies. 
+              In contrast, Tac2Real robustly handles large rotations and slips, with the sensor reliably recovering its original state post-contact, demonstrating superior stability for contact-rich RL tasks.
+          </p>
+            <img
+              class="teaser-image teaser-image--narrow"
+              src="svgs/project_page2.svg"
+              alt="Tac2Real overview figure">
+          </div>
+          <p class="lead" style="margin-top: 18px; text-align: justify;">
+              Benchmarked on a node with 16 RTX 4090 GPUs and 4090 environments, Tac2Real reaches 4,465 FPS, outperforming Tacchi. 
+              While TacSL achieves higher raw FPS by relying on simple SDF queries, it sacrifices physical fidelity. 
+          </p>
         </div>
       </div>
     </section>
@@ -413,93 +475,58 @@
     <section class="section">
       <div class="container">
         <div class="content">
-          <h2>Key Contributions</h2>
-          <div class="grid-2">
-            <div class="card">
-              <h3>What The Paper Adds</h3>
-              <ul>
-                <li>A sim-to-real pipeline for marker-based visuotactile sensing.</li>
-                <li>Better tactile deformation alignment between simulation and real observations.</li>
-                <li>Evaluation across realism metrics and contact-rich task learning.</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>What Visitors Should Notice</h3>
-              <ul>
-                <li>Method comparison against tactile simulation baselines.</li>
-                <li>Qualitative sim-versus-real tactile image or marker behavior alignment.</li>
-                <li>Policy results on downstream manipulation tasks.</li>
-              </ul>
-            </div>
+          <h2>TacAlign Results</h2>
+          <div class="teaser-box">
+            <img
+              class="teaser-image"
+              src="svgs/Fig5.svg"
+              alt="Tac2Real overview figure">
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="figures">
-      <div class="container">
-        <div class="content">
-          <h2>Figures</h2>
-          <p class="lead">
-            Figures are arranged sequentially for normal reading, similar to the reference page style, rather than in a carousel.
+          <p class="lead" style="margin-top: 18px; text-align: justify;">
+              Through the baseline and tasks-based simulation parameters calibration, the PNCG-IPC tactile displacements fields are in excellent agreement with the ground truth.
           </p>
-          <div class="figure-list">
-            <div class="figure-item">
-              <div class="figure-tag">Figure 1</div>
-              <h3>Overall Framework</h3>
-              <div class="placeholder">Insert Figure 1 here</div>
-              <p>Suggested content: overall pipeline, tactile sensor model, and sim-to-real workflow.</p>
-            </div>
-
-            <div class="figure-item">
-              <div class="figure-tag">Figure 2</div>
-              <h3>Tactile Deformation Modeling</h3>
-              <div class="placeholder">Insert Figure 2 here</div>
-              <p>Suggested content: contact modeling, marker displacement, or rendering details.</p>
-            </div>
-
-            <div class="figure-item">
-              <div class="figure-tag">Figure 3</div>
-              <h3>Qualitative Sim-to-Real Comparison</h3>
-              <div class="placeholder">Insert Figure 3 here</div>
-              <p>Suggested content: side-by-side tactile outputs for simulation and real sensing.</p>
-            </div>
-
-            <div class="figure-item">
-              <div class="figure-tag">Figure 4</div>
-              <h3>Quantitative Analysis</h3>
-              <div class="placeholder">Insert Figure 4 here</div>
-              <p>Suggested content: keypoint, displacement, error, or realism comparison plots.</p>
-            </div>
-
-            <div class="figure-item">
-              <div class="figure-tag">Figure 5</div>
-              <h3>Performance Comparison</h3>
-              <div class="placeholder">Insert Figure 5 here</div>
-              <p>Suggested content: fidelity-speed tradeoff and comparison to Tacchi, TacSL, or other baselines.</p>
-            </div>
-
-            <div class="figure-item">
-              <div class="figure-tag">Figure 6</div>
-              <h3>Downstream Manipulation Results</h3>
-              <div class="placeholder">Insert Figure 6 here</div>
-              <p>Suggested content: peg insertion, nut task curves, or policy rollout results.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="paper">
+    <section class="section">
       <div class="container">
         <div class="content">
-          <h2>Paper</h2>
-          <div class="paper-box">
-            <iframe src="Arxiv_Tac2Real.pdf" title="Tac2Real paper PDF"></iframe>
+          <h2>Online RL and Zero-Shot Real-World Deployment</h2>
+          <div class="teaser-box">
+            <img
+              class="teaser-image"
+              src="svgs/Fig7_new2.svg"
+              alt="Tac2Real overview figure">
           </div>
+          <p class="lead" style="margin-top: 18px; text-align: justify;">
+              We perform RL training on 2 contact-rich tasks in simulation, random orientation peg insertion and random orientation nut threading. 
+              (a)and (c) are snapshots of inference in peg insertion and nut threading tasks with tactile simulation; (b) and (d) are comparisons of the learning curve among Tac2Real, TacSL, Tacchi and no tactile feedback.
+              Tac2Real and TacSL exhibit similar good performance in simulation environments, both significantly outperforming Tacchi (many ineffective environments caused by numerical explosions of MPM) and the tactile-free case.
+          </p>
+            <img
+              class="teaser-image"
+              src="svgs/project_page3.svg"
+              alt="Tac2Real overview figure">
+          </div>
+          <p class="lead" style="margin-top: 18px; text-align: justify;">
+              Zero-shot real-world deployment snapshots of peg insertion tasks under 0°,15° and -15°. 
+          </p>
+            <img
+              class="teaser-image"
+              src="svgs/table_success_rate.svg"
+              alt="Tac2Real overview figure">
+          </div>
+          <p class="lead" style="margin-top: 18px; text-align: justify;">
+                Tac2Real achieves a high zero-shot sim-to-real succerss rate of 91.7%. Unlike the results in the simulation, the deployment of TacSL only attains a 15% success rate, attributable to the substantial discrepancy between simulated and real marker displacement fields.
+                We found that the task-based calibration, followed by robot control alignment, plays an important role in narrowing the sim-to-real gap, without which the success rate will decrease significantly.
+          </p>
         </div>
       </div>
     </section>
+
+
+
 
     <section class="section" id="bibtex">
       <div class="container">
