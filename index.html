@@ -389,16 +389,24 @@
     <section class="section">
       <div class="container">
         <div class="content">
-          <h2>Overview</h2>
+          <h2>Visuotactile Simulation Framework</h2>
           <div class="teaser-box">
             <img
               class="teaser-image"
               src="svgs/fig3_new.svg"
               alt="Tac2Real overview figure">
           </div>
-          <p class="lead" style="margin-top: 18px;">
-            This overview figure summarizes the performance of Tac2Real against prior visuotactile simulation baselines, highlighting the balance it achieves between physical realism, computational efficiency, and downstream policy transfer quality for contact-rich robotic manipulation.
+          <p class="lead" style="margin-top: 18px; text-align: justify;">
+            Tac2Real uses PNCG-IPC, a physically consistent simulation method with robust contact handling and numerical stability,  as visuotactile simulator. 
+            The visuotactile simulation is integrated into existing physics engine to support online RL training follows a plugin-based architecture. 
+            By extracting relative pose data during physics steps to simulate marker displacements, it forms a combined observation for RL agents. 
           </p>
+          <div class="card" style="margin-top: 18px;">
+            <ul>
+              <li><strong>Cross-engine compatibility.</strong> Tac2Real follows a decoupled plugin-based architecture, allowing the visuotactile simulator to be integrated into existing physics engines for online RL training.</li>
+              <li><strong>Multi-node Multi-GPU parallelization.</strong> Tac2Real adopts a Ray-based multi-node, multi-GPU high-throughput parallel simulation architecture to generate marker displacement fields at interactive rates.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
